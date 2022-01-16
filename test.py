@@ -3,4 +3,7 @@
 import requests
 
 r = requests.get("https://covid19-api.com/country?name=USA&format=json")
-print(r)
+print(r.content)
+print(r.headers)
+print(r.json)
+print(r.request)
