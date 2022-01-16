@@ -26,3 +26,9 @@ r = requests.request("GET", url, headers=headers, params=params)
 # present json data in json format
 data = json.loads(r.text)
 print(json.dumps(data, indent=4, sort_keys=True))
+
+# write data to file in case user wants to review later
+filename = str(args.ticker) + ".txt"
+file = open(filename, "w")
+f = file.write(json.dumps(data, indent=4, sort_keys=True))
+file.close()
