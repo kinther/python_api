@@ -13,8 +13,6 @@ headers = {
 # actually pull the data
 r = requests.request("GET", url, headers=headers)
 
-# change data to dict format
-data = json.loads(r.text)
-
 # present json data in json format
+data = json.loads(r.text)
 print(json.dumps(data[0], indent=4, sort_keys=True))
