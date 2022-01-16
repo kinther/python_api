@@ -7,5 +7,6 @@ import json
 r = requests.get("https://covid19-api.com/country?name=USA&format=json")
 
 # present data in JSON format
-data = json.loads(r.text)
+data = r.json()
+
 print(data)
