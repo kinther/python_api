@@ -10,3 +10,6 @@ r = requests.get("https://covid19-api.com/country?name=USA&format=json")
 data = json.loads(r.content)
 
 print(data)
+print(type(data))
+
+print(json.dumps(data))
