@@ -15,5 +15,7 @@ r = requests.request("GET", url, headers=headers)
 
 # change data to dict format
 data = json.loads(r.text)
+data = data[0]
 
-print(type(data))
+# present json data
+print(json.dumps(data, indent=4, sort_keys=True))
