@@ -4,7 +4,7 @@ import requests
 import json
 
 # define requests data
-url = "https://covid19-api.com/country?name=USA&format=json"
+url = "https://covid19-api.com/country?name=USA"
 
 headers = {
     'accept': "application/json"
@@ -17,5 +17,5 @@ r = requests.request("GET", url, headers=headers)
 data = json.loads(r.text)
 data = data[0]
 
-# present json data
+# present json data in json format
 print(json.dumps(data, indent=4, sort_keys=True))
