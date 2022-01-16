@@ -14,4 +14,4 @@ headers = {
 r = requests.request("GET", url, headers=headers)
 
 # present data in JSON format
-print(type(r))
+print(type(r.json()))
