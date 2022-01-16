@@ -12,4 +12,6 @@ data = json.loads(r.content)
 print(data)
 print(type(data))
 
-print(json.dumps(data))
+print(data[0])
+print(type(data[0]))
+
