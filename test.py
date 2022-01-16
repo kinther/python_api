@@ -3,10 +3,15 @@
 import requests
 import json
 
+url = "https://covid19-api.com/country?name=USA&format=json"
+
+headers = {
+    'accept': "application/json"
+    }
+
+
 # actually pull the data
-r = requests.get("https://covid19-api.com/country?name=USA&format=json")
+r = requests.request("GET", url, headers=headers)
 
 # present data in JSON format
-data = r.json()
-
-print(data)
+print(type(r))
