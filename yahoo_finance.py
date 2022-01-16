@@ -25,5 +25,4 @@ r = requests.request("GET", url, headers=headers, params=params)
 
 # present json data in json format
 data = json.loads(r.text)
-print(data)
-print(type(data))
+print(json.dumps(data, indent=4, sort_keys=True))
