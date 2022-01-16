@@ -8,4 +8,5 @@ r = requests.get("https://covid19-api.com/country?name=USA&format=json")
 
 # present data in JSON format
 data = json.loads(r.content)
-print(json.dumps(data, indented=4, sort_keys=True))
+
+print(data)
