@@ -24,7 +24,8 @@ for entry in gnr:
     url = entry['link']
     url = 'https://' + url
     i = urlopen(url)
-    print(i)
+    print(dir(i))
+    print(type(i))
     # links.append(url)
 
 # print links learned
