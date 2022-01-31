@@ -18,7 +18,7 @@ gn.set_lang('en')
 gn.set_period('30m')
 gn.set_encode('utf-8')
 gn.get_news(args.search)
-gnr = gn.links()
+gnr = gn.get_links()
 
 # parse news data for links
 for entry in gnr:
