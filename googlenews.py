@@ -21,6 +21,7 @@ gnr = gn.results()
 # parse news data for links
 for entry in gnr:
     url = entry['link']
+    url = 'https://' + url
     links.append(entry['link'])
 
 # print links learned
