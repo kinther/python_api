@@ -23,7 +23,7 @@ gnr = gn.results()
 for entry in gnr:
     url = entry['link']
     url = 'https://' + url
-    i = urllib.urlopen(url)
+    i = urlopen(url)
     print(i)
     # links.append(url)
 
