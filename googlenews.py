@@ -1,6 +1,7 @@
 # Imports
 from GoogleNews import GoogleNews
-import argparse  # because I'm not going to leave my api key in the wild on github
+import base64  # convert GoogleNews links to readable format
+import argparse  # what do we want to search for?
 
 # data strcutures
 links = []
@@ -20,7 +21,9 @@ r = gn.results()
 
 # parse news data for links
 for entry in r:
-    links.append(entry['link'])
+    url = entry['link']
+    url = base64.b64decode(url)
+    links.append(url)
 
 # print links learned
 print(links)
