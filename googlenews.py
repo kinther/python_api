@@ -1,5 +1,6 @@
 # Imports
 from GoogleNews import GoogleNews
+import requests  # decipher GoogleNews links
 import argparse  # because I'm not going to leave my api key in the wild on github
 
 # data strcutures
@@ -16,11 +17,14 @@ gn.set_lang('en')
 gn.set_period('30m')
 gn.set_encode('utf-8')
 gn.get_news(args.search)
-r = gn.results()
+gnr = gn.results()
 
 # parse news data for links
-for entry in r:
-    links.append(entry['link'])
+for entry in gnr:
+    url = entry['link']
+    r = requests.head(url, allow_redirects=True)
+    print(r)
+    # links.append(entry['link'])
 
 # print links learned
-print(links)
+# print(links)
