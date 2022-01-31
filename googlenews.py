@@ -28,6 +28,7 @@ for entry in gnr:
         r = requests.head(url, allow_redirects=True)
         links.append(r.url)
         print(f"Found link {r.url}")
+        sleep(1)
     except:
         print("Unable to get link.")
 
