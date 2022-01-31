@@ -18,14 +18,18 @@ gn.set_lang('en')
 gn.set_period('30m')
 gn.set_encode('utf-8')
 gn.get_news(args.search)
-gnr = gn.results()
+gnr = gn.links()
 
 # parse news data for links
 for entry in gnr:
-    url = entry['link']
-    url = 'https://' + url
-    r = requests.head(url, allow_redirects=True)
-    links.append(r.url)
+    try:
+        url = entry
+        url = 'https://' + url
+        r = requests.head(url, allow_redirects=True)
+        links.append(r.url)
+        print(f"Found link {r.url}")
+    except:
+        print("Unable to get link.")
 
 # print links learned
 print(links)
