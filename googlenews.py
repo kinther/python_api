@@ -25,7 +25,7 @@ for entry in gnr:
     try:
         url = entry
         url = 'https://' + url
-        r = requests.head(url, allow_redirects=True)
+        r = requests.head(url, allow_redirects=True, timeout=5)
         links.append(r.url)
         print(f"Found link {r.url}")
         sleep(1)
