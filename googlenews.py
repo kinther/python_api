@@ -5,7 +5,7 @@ import requests  # convert GoogleNews url to real url
 import argparse  # because I'm not going to leave my api key in the wild on github
 
 # data strcutures
-stories {}
+stories = {}
 
 # gather argparse data
 parser = argparse.ArgumentParser()
