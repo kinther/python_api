@@ -22,7 +22,7 @@ gnr = gn.results()
 for entry in gnr:
     url = entry['link']
     url = 'https://' + url
-    links.append(entry['link'])
+    links.append(url)
 
 # print links learned
 print(links)
