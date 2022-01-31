@@ -1,6 +1,7 @@
 # Imports
-from GoogleNews import GoogleNews
-import requests
+from GoogleNews import GoogleNews  # get those links
+from time import sleep  # to not go over rate limiting
+import requests  # convert GoogleNews url to real url
 import argparse  # because I'm not going to leave my api key in the wild on github
 
 # data strcutures
@@ -25,6 +26,7 @@ for entry in gnr:
     url = 'https://' + url
     r = requests.head(url, allow_redirects=True)
     links.append(url)
+    sleep(5)
 
 # print links learned
 print(links)
