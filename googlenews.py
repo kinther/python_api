@@ -22,7 +22,6 @@ r = gn.results()
 # parse news data for links
 for entry in r:
     url = entry['link']
-    url = url + 'aa'
     url = base64.b64decode(url)
     links.append(url)
 
