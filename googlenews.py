@@ -25,8 +25,7 @@ for entry in gnr:
     url = entry['link']
     url = 'https://' + url
     r = requests.head(url, allow_redirects=True)
-    links.append(url)
-    sleep(5)
+    links.append(r.url)
 
 # print links learned
 print(links)
