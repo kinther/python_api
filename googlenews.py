@@ -23,7 +23,8 @@ gnr = gn.results()
 for entry in gnr:
     url = entry['link']
     url = 'http://' + url
-    r = requests.head(url, allow_redirects=True)
+    cookies = {'CONSENT': 'YES+cb.20210720-07-p0.en+FX+410'}
+    r = requests.head(url, cookies=cookies, allow_redirects=True)
     print(r.history[-1].url)
     # links.append(entry['link'])
 
