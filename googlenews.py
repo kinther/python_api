@@ -1,5 +1,6 @@
 # Imports
 from GoogleNews import GoogleNews
+from urllib.request import urlopen
 import argparse  # because I'm not going to leave my api key in the wild on github
 
 # data strcutures
@@ -22,7 +23,9 @@ gnr = gn.results()
 for entry in gnr:
     url = entry['link']
     url = 'https://' + url
-    links.append(url)
+    i = urllib.urlopen(url)
+    print(i)
+    # links.append(url)
 
 # print links learned
-print(links)
+# print(links)
