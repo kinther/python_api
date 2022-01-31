@@ -5,7 +5,7 @@ import requests  # convert GoogleNews url to real url
 import argparse  # because I'm not going to leave my api key in the wild on github
 
 # data strcutures
-links = []
+stories {}
 
 # gather argparse data
 parser = argparse.ArgumentParser()
@@ -18,19 +18,20 @@ gn.set_lang('en')
 gn.set_period('1h')
 gn.set_encode('utf-8')
 gn.get_news(args.search)
-gnr = gn.get_links()
+gnr = gn.results()
 
 # parse news data for links
 for entry in gnr:
     try:
-        url = entry
+        headline = entry['title']
+        url = entry['link']
         url = 'https://' + url
         r = requests.head(url, allow_redirects=True, timeout=5)
-        links.append(r.url)
-        print(f"Found link {r.url}")
+        stories[headline] = r.url
+        print(f"Found article with {headline} and link {r.url}")
         sleep(1)
     except:
         print("Unable to get link.")
 
 # print links learned
-print(links)
+print(stories)
