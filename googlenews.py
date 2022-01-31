@@ -15,7 +15,7 @@ args = parser.parse_args()
 # define GoogleNews criteria
 gn = GoogleNews()
 gn.set_lang('en')
-gn.set_period('30m')
+gn.set_period('1h')
 gn.set_encode('utf-8')
 gn.get_news(args.search)
 gnr = gn.get_links()
